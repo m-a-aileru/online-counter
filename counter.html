@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="counter.css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>ONLINE COUNTER</h1>
+    </header>
+  
+    <div class="display-container">
+      <output id="display">0</output>
+    </div>
+  
+    <div class="control-panel-container">
+     <div class="button-container">
+        <button onclick="addOne()" onmouseover="eventHandler3('add')" onmouseleave="eventHandler4('add')" id="add">Add One</button><span class="key-ctrl-in">Or Press ENTER</span>
+        <button onclick="removeOne()" onmouseover="eventHandler3('remove')" onmouseleave="eventHandler4('remove')" id="remove">Remove One</button><span class="key-ctrl-in">Or Press BACKSPACE</span>
+        <button onclick="clearDisplay()" onmouseover="eventHandler3('clear')" onmouseleave="eventHandler4('clear')" id="clear">Clear</button><span class="key-ctrl-in">Or Press SPACE</span>
+	 </div>
+	  <div class="ctrl-container">
+	    <p class="key-ctrl-block">Or Press ENTER</p>
+	    <p class="key-ctrl-block">Or Press BACKSPACE</p>
+	    <p class="key-ctrl-block">Or Press SPACE</p>
+	  </div>
+    </div>
+  </div>
+  
+  <script>
+	document.addEventListener("keydown", eventHandler);
+	document.addEventListener("keyup", eventHandler2);
+	//document.addEventListener("mouseover", eventHandler3);
+	//document.addEventListener("keyup", eventHandler4);
+	let count = 0;
+	
+	function addOne() {
+		count += 1;
+		
+		document.getElementById("display").innerHTML = count;
+	}
+	
+	function removeOne() {
+		if (count > 0) count -= 1; 
+		
+		document.getElementById("display").innerHTML = count;
+	}
+	
+	function clearDisplay() {
+		count = 0;
+		
+		document.getElementById("display").innerHTML = count;
+	}
+	
+	/* When a key is pressed down 
+		TO TRY: 
+			- maybe try turning the conditional code into a switch statement
+			- try combining with the other 'event handler' functions into one big function
+	*/
+	function eventHandler(event) {
+		// take in the input, whatever it is 
+		let evt = event.key;
+		
+		//depending on what it is, call the appropriate function
+		if (evt == "Enter") {
+			document.getElementById("add").style.background = "#0033ff"; 
+			document.getElementById("add").style.color = "white"; 
+			document.getElementById("add").style.transition = "all 0.5s"; 
+			addOne(); 
+		}
+		if (evt == "Backspace") {
+			document.getElementById("remove").style.background = "#0033ff"; 
+			document.getElementById("remove").style.color = "white"; 
+			document.getElementById("remove").style.transition = "all 0.5s"; 
+			removeOne();
+		} 
+		if (evt == " ") {
+			document.getElementById("clear").style.background = "#0033ff"; 
+			document.getElementById("clear").style.color = "white"; 
+			document.getElementById("clear").style.transition = "all 0.5s"; 
+			clearDisplay();
+		}
+		
+		// update the display
+	}
+	/* When a key is released 
+		TO TRY: 
+			- maybe try turning the conditional code into a switch statement
+			- try combining with the other 'event handler' functions into one big function
+	*/
+	function eventHandler2(event) {
+		// take in the input, whatever it is 
+		let evt = event.key;
+		
+		// depending on what it is, call the appropriate function
+		if (evt == "Enter") {		
+			document.getElementById("add").style.background = "white"; 
+			document.getElementById("add").style.color = "#0033ff"; 	
+			document.getElementById("add").style.transition = "all 0.5s"; 
+		}
+		if (evt == "Backspace") {		
+			document.getElementById("remove").style.background = "white"; 
+			document.getElementById("remove").style.color = "#0033ff"; 	
+			document.getElementById("remove").style.transition = "all 0.5s"; 
+		}
+		if (evt == " ") {		
+			document.getElementById("clear").style.background = "white"; 
+			document.getElementById("clear").style.color = "#0033ff"; 	
+			document.getElementById("clear").style.transition = "all 0.5s"; 
+		}
+		
+		// update the display
+	}
+	/* When a mouse hovers over a button 
+		TO TRY: 
+			- maybe try turning the conditional code into a switch statement
+			- try combining with the other 'event handler' functions into one big function
+	*/
+	function eventHandler3(elementID) {
+		// take in the input, whatever it is 
+		//let evt = event.key;
+		
+		// depending on what it is, call the appropriate function
+		if (elementID == "add") {
+			document.getElementById("add").style.background = "#0033ff"; 
+			document.getElementById("add").style.color = "white"; 	
+		}
+		if (elementID == "remove") {
+			document.getElementById("remove").style.background = "#0033ff"; 
+			document.getElementById("remove").style.color = "white"; 	
+		}
+		if (elementID == "clear") {
+			document.getElementById("clear").style.background = "#0033ff"; 
+			document.getElementById("clear").style.color = "white"; 	
+		}
+		
+		// update the display
+	}
+	/* When a mouse leaves off an element 
+		TO TRY: 
+			- maybe try turning the conditional code into a switch statement
+			- try combining with the other 'event handler' functions into one big function
+	*/
+	function eventHandler4(elementID) {
+		// take in the input, whatever it is 
+		//let evt = event.key;
+		
+		// depending on what it is, call the appropriate function
+		if (elementID == "add") {
+			document.getElementById("add").style.background = "white"; 
+			document.getElementById("add").style.color = "#0033ff"; 	
+			document.getElementById("add").style.transition = "all 0.5s"; 
+		}
+		if (elementID == "remove") {
+			document.getElementById("remove").style.background = "white"; 
+			document.getElementById("remove").style.color = "#0033ff"; 	
+			document.getElementById("remove").style.transition = "all 0.5s"; 
+		}
+		if (elementID == "clear") {
+			document.getElementById("clear").style.background = "white"; 
+			document.getElementById("clear").style.color = "#0033ff"; 	
+			document.getElementById("clear").style.transition = "all 0.5s"; 
+		}
+		// update the display
+	}
+  </script>  
+</body>
+</html>
