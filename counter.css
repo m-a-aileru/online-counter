@@ -1,0 +1,275 @@
+/** CSS for "Online Counter App" */
+
+/* GENERAL/MAIN ELEMENTS */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+	background: #f8f8f8;
+	color: #0033ff; 
+	font-family: 'Ubuntu', sans-serif;
+	text-align: center;
+}
+
+#container {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+/* SPECIFIC UI ELEMENTS */
+
+header {
+	width: 100%;
+	background-color: #0033ff;
+	color: white;
+}
+
+header h1 { padding: 2%; font-size: 7vw; }
+
+.display-container  { padding: 4%; }
+
+#display { font-size: 15vw; }
+
+.control-panel-container { width: 100%; }
+
+.button-container {
+	width: 100%; 
+	display: grid;
+	grid-gap: 2%;
+	/* border: 2px solid black; for testing purposes only */
+}
+
+.button-container button {
+	background: white;
+	color: #0033ff;
+	font-family: 'Ubuntu', sans-serif;
+	border: 1px solid #0033ff;
+	border-radius: 3%;
+	font-size: 6vw;
+	text-align: center;
+	margin: 25px;
+	padding: 10px;
+}
+
+.button-container button:hover {
+	background: #0033ff;
+	color: white;
+	transition: background 0.5s;
+}
+
+/** leave off for now, seems kind of redundant anyway
+.button-container button:active {
+	background: #3399ff;
+	color: white;
+}
+*/
+.key-ctrl-block, .key-ctrl-in { display: none; }
+
+#add{}
+
+#remove {}
+
+#clear { grid-column: 1 / span 2; }
+
+/* BREAKPOINTS */
+
+/* Really small devices (old mobiles and such) */
+@media only screen and (max-width: 376px) {
+  .button-container { display: block; }
+	
+  .button-container button { width: 100%; margin: auto; }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  /* body {background: orange;} for testing purposes only */
+  
+  .button-container button { font-size: 4vw; }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  /* body {background-color: yellow;} for testing purposes only */
+  .button-container { display: inline-block; }
+
+  .button-container button { width: 30%; margin: 5px; }
+	
+  .key-ctrl-in { display: none;}
+  
+  .key-ctrl-block { 
+	display: inline-block;
+	padding: 3% 8.5%;
+	font-size: 1.6vw;
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  /* body {background-color: green;} for testing puroses only */
+  
+  header h1 {
+	padding: 2%;
+	font-size: 5vw;
+  }
+
+  #display {
+	font-size: 12vw;
+  }
+  
+  .key-ctrl-in { display: inline; font-size: 1.2vw;}
+  
+  .key-ctrl-block { display: none; } 
+  
+  .button-container { margin-top: 65px; }
+  
+  .button-container button {
+	font-size: 2vw;
+	width: 20%; 
+	margin: 18px;
+	padding: 25px 0px;
+  }
+}/** CSS for "Online Counter App" */
+
+/* GENERAL/MAIN ELEMENTS */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+	background: #f8f8f8;
+	color: #0033ff; 
+	font-family: 'Ubuntu', sans-serif;
+	text-align: center;
+}
+
+#container {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+/* SPECIFIC UI ELEMENTS */
+
+header {
+	width: 100%;
+	background-color: #0033ff;
+	color: white;
+}
+
+header h1 { padding: 2%; font-size: 7vw; }
+
+.display-container  { padding: 4%; }
+
+#display { font-size: 15vw; }
+
+.control-panel-container { width: 100%; }
+
+.button-container {
+	width: 100%; 
+	display: grid;
+	grid-gap: 2%;
+	/* border: 2px solid black; for testing purposes only */
+}
+
+.button-container button {
+	background: white;
+	color: #0033ff;
+	font-family: 'Ubuntu', sans-serif;
+	border: 1px solid #0033ff;
+	border-radius: 3%;
+	font-size: 6vw;
+	text-align: center;
+	margin: 25px;
+	padding: 10px;
+}
+
+.button-container button:hover {
+	background: #0033ff;
+	color: white;
+	transition: background 0.5s;
+}
+
+/** leave off for now, seems kind of redundant anyway
+.button-container button:active {
+	background: #3399ff;
+	color: white;
+}
+*/
+.key-ctrl-block, .key-ctrl-in { display: none; }
+
+#add{}
+
+#remove {}
+
+#clear { grid-column: 1 / span 2; }
+
+/* BREAKPOINTS */
+
+/* Really small devices (old mobiles and such) */
+@media only screen and (max-width: 376px) {
+  .button-container { display: block; }
+	
+  .button-container button { width: 100%; margin: auto; }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  /* body {background: orange;} for testing purposes only */
+  
+  .button-container button { font-size: 4vw; }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  /* body {background-color: yellow;} for testing purposes only */
+  .button-container { display: inline-block; }
+
+  .button-container button { width: 30%; margin: 5px; }
+	
+  .key-ctrl-in { display: none;}
+  
+  .key-ctrl-block { 
+	display: inline-block;
+	padding: 3% 8.5%;
+	font-size: 1.6vw;
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  /* body {background-color: green;} for testing puroses only */
+  
+  header h1 {
+	padding: 2%;
+	font-size: 5vw;
+  }
+
+  #display {
+	font-size: 12vw;
+  }
+  
+  .key-ctrl-in { display: inline; font-size: 1.2vw;}
+  
+  .key-ctrl-block { display: none; } 
+  
+  .button-container { margin-top: 65px; }
+  
+  .button-container button {
+	font-size: 2vw;
+	width: 20%; 
+	margin: 18px;
+	padding: 25px 0px;
+  }
+}
